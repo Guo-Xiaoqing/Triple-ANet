@@ -7,6 +7,7 @@ by [Xiaoqing Guo](https://guo-xiaoqing.github.io/), [Yixuan Yuan](http://www.ee.
 This repository is for our MICCAI2019 paper ["Triple ANet: Adaptive Abnormal-aware Attention Network for WCE Image Classification"]()
 ### Framework:
 ![image](https://github.com/Guo-Xiaoqing/Triple-ANet/tree/master/image/framework.png)
+<img width="150" height="150" src="https://github.com/Guo-Xiaoqing/Triple-ANet/tree/master/image/framework.png"/>
 
 ## Requirement:
 Tensorflow 1.4
