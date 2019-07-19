@@ -8,7 +8,7 @@ This repository is for our MICCAI2019 paper ["Triple ANet: Adaptive Abnormal-awa
 ### Framework:
 
 ![image](https://github.com/Guo-Xiaoqing/Triple-ANet/tree/master/image/framework.png)
-<!--<img width="150" height="150" src="https://github.com/Guo-Xiaoqing/Triple-ANet/tree/master/image/framework.png"/>-->
+<img width="500" height="500" src="https://github.com/Guo-Xiaoqing/Triple-ANet/tree/master/image/framework.png"/>
 
 ## Requirement:
 Tensorflow 1.4
