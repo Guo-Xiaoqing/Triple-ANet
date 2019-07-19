@@ -8,9 +8,16 @@ This repository is for our MICCAI2019 paper ["Triple ANet: Adaptive Abnormal-awa
 ### Framework:
 ![](https://github.com/Guo-Xiaoqing/Triple-ANet/raw/master/image/framework.png)
 
-## Requirement:
+## Usage:
+### Requirement:
 Tensorflow 1.4
 Python 3.5
+
+### Data preprocessing:
+1, Use make_txt.py to split training data and testing data. The generated txt files are showed in folder "txt".
+`''
+python3 train.py
+`''
 
 ![](https://github.com/Guo-Xiaoqing/Triple-ANet/raw/master/image/result.png)
 
