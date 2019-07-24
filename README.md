@@ -24,12 +24,12 @@ Use "make_txt.py" to split training data and testing data. The generated txt fil
 
 ### Train the model: 
 ```
-python3 Triple_ANet_train.py -tfdata_path ./tfrecord/
+python3 Triple_ANet_train.py --tfdata_path ./tfrecord/
 ```
 
 ### Test the model: 
 ```
-python3 Triple_ANet_test.py -tfdata_path ./tfrecord/
+python3 Triple_ANet_test.py --tfdata_path ./tfrecord/
 ```
 ## Results:
 ![](https://github.com/Guo-Xiaoqing/Triple-ANet/raw/master/image/result.png)
