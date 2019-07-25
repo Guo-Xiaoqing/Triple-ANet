@@ -19,8 +19,8 @@ Clone the repository:
 git clone https://github.com/Guo-Xiaoqing/Triple-ANet.git
 cd Triple-ANet
 ```
-Use "make_txt.py" to split training data and testing data. The generated txt files are showed in folder "txt".
-"make_tfrecords.py" is used to make tfrecord format data.
+Use "make_txt.py" to split training data and testing data. The generated txt files are showed in folder "./txt".
+"make_tfrecords.py" is used to make tfrecord format data, and the tfrecord could be stored in folder "./tfrecord".
 
 ### Train the model: 
 ```
