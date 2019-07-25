@@ -6,7 +6,7 @@ by [Xiaoqing Guo](https://guo-xiaoqing.github.io/), [Yixuan Yuan](http://www.ee.
 ### Intoduction:
 This repository is for our MICCAI2019 paper ["Triple ANet: Adaptive Abnormal-aware Attention Network for WCE Image Classification"]()
 ### Framework:
-![](https://github.com/Guo-Xiaoqing/Triple-ANet/raw/master/image/framework.png)
+![](https://github.com/Guo-Xiaoqing/Triple-ANet/raw/master/framework.png)
 
 ## Usage:
 ### Requirement:
@@ -32,7 +32,7 @@ python3 Triple_ANet_train.py --tfdata_path ./tfrecord/
 python3 Triple_ANet_test.py --tfdata_path ./tfrecord/
 ```
 ## Results:
-![](https://github.com/Guo-Xiaoqing/Triple-ANet/raw/master/image/result.png)
+![](https://github.com/Guo-Xiaoqing/Triple-ANet/raw/master/result.png)
 From top to bottom, they are respectively inflammatory, vascular lesion and polyp samples. (a) Original image. (b)(c) show attention maps of the 1st and 2nd AAM. (d)(e) show offset fields in the 1st branch and 2nd branch of the 1st AMM while (f)(g) show offset fields in the 1st branch and 2nd branch of the 2st AMM. (h) Ground truth of mask.
 
 ## Citation:
