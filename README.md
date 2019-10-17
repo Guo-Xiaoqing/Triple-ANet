@@ -36,13 +36,13 @@ python3 Triple_ANet_test.py --tfdata_path ./tfrecord/
 From top to bottom, they are respectively inflammatory, vascular lesion and polyp samples. (a) Original image. (b)(c) show attention maps of the 1st and 2nd AAM. (d)(e) show offset fields in the 1st branch and 2nd branch of the 1st AMM while (f)(g) show offset fields in the 1st branch and 2nd branch of the 2st AMM. (h) Ground truth of mask.
 
 ## Citation:
-@inproceedings{guo2019triple,
-  title={Triple ANet: Adaptive Abnormal-aware Attention Network for WCE Image Classification},
-  author={Guo, Xiaoqing and Yuan, Yixuan},
-  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
-  pages={293--301},
-  year={2019},
-  organization={Springer}
+@inproceedings{guo2019triple, <\b>
+  title={Triple ANet: Adaptive Abnormal-aware Attention Network for WCE Image Classification}, <\b>
+  author={Guo, Xiaoqing and Yuan, Yixuan}, <\b>
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention}, <\b>
+  pages={293--301}, <\b>
+  year={2019}, <\b>
+  organization={Springer} <\b>
 }
 
 ## Questions:
