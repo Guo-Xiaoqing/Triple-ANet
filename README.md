@@ -4,7 +4,7 @@ by [Xiaoqing Guo](https://guo-xiaoqing.github.io/), [Yixuan Yuan](http://www.ee.
 
 ## Summary:
 ### Intoduction:
-This repository is for our MICCAI2019 paper ["Triple ANet: Adaptive Abnormal-aware Attention Network for WCE Image Classification"]()
+This repository is for our MICCAI2019 paper ["Triple ANet: Adaptive Abnormal-aware Attention Network for WCE Image Classification"](https://link.springer.com/content/pdf/10.1007%2F978-3-030-32239-7_33.pdf)
 ### Framework:
 ![](https://github.com/Guo-Xiaoqing/Triple-ANet/raw/master/framework.png)
 
