@@ -13,7 +13,7 @@ class Data_set(object):
         self.name = name
 
     def read_processing_generate_image_label_batch(self):
-        if self.name == 'train':
+        if self.name.find('train') != -1:
             # get filename list
             tfrecord_filename = tf.gfile.Glob(self.tfrecord_file + '*%s*' % 'train')
             print('tfrecord train filename', tfrecord_filename)
