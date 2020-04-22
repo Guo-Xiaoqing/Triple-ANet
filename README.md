@@ -38,13 +38,13 @@ From top to bottom, they are respectively inflammatory, vascular lesion and poly
 ## Citation:
 If you found Triple ANet helpful for your research, please cite our paper:
 ```
-@inproceedings{guo2019triple, <br>
-  title={Triple ANet: Adaptive Abnormal-aware Attention Network for WCE Image Classification}, <br>
-  author={Guo, Xiaoqing and Yuan, Yixuan}, <br>
-  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention}, <br>
-  pages={293--301}, <br>
-  year={2019}, <br>
-  organization={Springer} <br>
+@inproceedings{guo2019triple,
+  title={Triple ANet: Adaptive Abnormal-aware Attention Network for WCE Image Classification},
+  author={Guo, Xiaoqing and Yuan, Yixuan},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={293--301},
+  year={2019},
+  organization={Springer}
 }
 ```
 
