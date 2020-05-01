@@ -15,7 +15,7 @@ class Data_set(object):
     def read_processing_generate_image_label_batch(self):
         if self.name.find('train') != -1:
             # get filename list
-            tfrecord_filename = tf.gfile.Glob(self.tfrecord_file + '*%s*' % 'train')
+            tfrecord_filename = tf.gfile.Glob(self.tfrecord_file + '*%s*' % self.name)
             print('tfrecord train filename', tfrecord_filename)
             filename_queue = tf.train.string_input_producer(tfrecord_filename, num_epochs=None, shuffle=self.shuffle)
             # get tensor of image/label
