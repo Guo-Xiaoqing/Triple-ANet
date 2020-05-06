@@ -22,6 +22,9 @@ cd Triple-ANet
 Use "make_txt.py" to split training data and testing data. The generated txt files are showed in folder "./txt/".
 "make_tfrecords.py" is used to make tfrecord format data, which could be stored in folder "./tfrecord/".
 
+#### Update at 2020.05.06
+To avoid additional data augmentation before training, online data augmentations, including random flips and rotations, are added in script "utilsForTF.py".
+
 ### Train the model: 
 ```
 python3 Triple_ANet_train.py --tfdata_path ./tfrecord/
