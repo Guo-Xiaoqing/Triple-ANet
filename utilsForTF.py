@@ -17,34 +17,36 @@ class Data_set(object):
             # get filename list
             tfrecord_filename = tf.gfile.Glob(self.tfrecord_file + '*%s*' % self.name)
             print('tfrecord train filename', tfrecord_filename)
-            filename_queue = tf.train.string_input_producer(tfrecord_filename, num_epochs=None, shuffle=self.shuffle)
+            filename_queue = tf.train.string_input_producer(tfrecord_filename, num_epochs=None, shuffle=True)
             # get tensor of image/label
             image, label = read_tfrecord_and_decode_into_image_label_pair_tensors(filename_queue,
                                                                                   self.actual_image_size)
             #image = channels_image_standardization(image)
             image = image_standardization(image)
-            #image = tf.image.random_flip_left_right(image)
+            image = dataaugmentation(image)
             image_batch, label_batch = tf.train.shuffle_batch([image, label],
                                                               batch_size=self.batch_size,
                                                               capacity=self.capacity,
                                                               num_threads=2,
                                                               min_after_dequeue=self.min_after_dequeue)
+            image_batch = tf.contrib.image.rotate(image_batch, tf.random_uniform(shape = (tf.shape(image_batch)[0], ), minval=-0.5, maxval=0.5, seed=37), interpolation='BILINEAR')
 
         else:
             # get filename list
             tfrecord_filename = tf.gfile.Glob(self.tfrecord_file + '*%s*' % self.name)
             print('tfrecord test filename', tfrecord_filename)
             # The file name list generator
-            filename_queue = tf.train.string_input_producer(tfrecord_filename, num_epochs=None, shuffle=self.shuffle)
+            filename_queue = tf.train.string_input_producer(tfrecord_filename, num_epochs=None, shuffle=False)
             # get tensor of image/label
             image, label = read_tfrecord_and_decode_into_image_label_pair_tensors(filename_queue,
                                                                                   self.actual_image_size)
-            #image = channels_image_standardization(image)z
+            #image = channels_image_standardization(image)
             image = image_standardization(image)
             image_batch, label_batch = tf.train.batch([image, label],
                                                               batch_size=self.batch_size,
                                                               capacity=self.capacity)
                                                               # num_threads=self.num_threads)
+        image_batch = tf.image.resize_bilinear(image_batch, size=[self.actual_image_size, self.actual_image_size])
         return image_batch, label_batch
 
 def read_tfrecord_and_decode_into_image_label_pair_tensors(tfrecord_filenames_queue, size):
@@ -85,8 +87,8 @@ def read_tfrecord_and_decode_into_image_label_pair_tensors(tfrecord_filenames_qu
     height = tf.cast(features['image/height'], tf.int64)
     width = tf.cast(features['image/width'], tf.int64)
     depth = tf.cast(features['image/depth'], tf.int64)
-
-    image = tf.reshape(image, [size,size,3])   #height,width,depth
+    image = tf.reshape(image, [128,128,3])   #height,width,depth
+    print(image)
     image = tf.to_float(image)
 
     return image, label
@@ -94,5 +96,19 @@ def read_tfrecord_and_decode_into_image_label_pair_tensors(tfrecord_filenames_qu
 def image_standardization(image):
     out_image = image/255.0
     #out_image = image/127.5 - 1.0
-    #out_image = image
+    '''out_image = image
+    #out_image = tf.reverse(image, axis=[-1])
+    rgb = tf.cast(np.array([[[123, 117, 104]]]), tf.float32)
+    out_image = out_image  - rgb
+    out_image = out_image/127.5'''
+
     return out_image
+
+def dataaugmentation(images):
+    images = tf.image.random_flip_up_down(images) 
+    images = tf.image.random_flip_left_right(images) 
+    #images = tf.image.random_brightness(images, max_delta=0.3) 
+    #images = tf.image.random_contrast(images, 0.8, 1.2)
+    #images = tf.image.random_saturation(images, 0.7, 1.3)
+
+    return images
